@@ -1,0 +1,14 @@
+{
+	"extends": ["@tsconfig/strictest"],
+	"include": ["./src/*.ts"],
+	"compilerOptions": {
+		"outDir": "dist/",
+		"sourceMap": true,
+		"declaration": true,
+		"verbatimModuleSyntax": true,
+		"erasableSyntaxOnly": true,
+
+		"module": "nodenext",
+		"moduleResolution": "nodenext"
+	}
+}

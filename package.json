@@ -1,0 +1,40 @@
+{
+	"name": "@dimatakoy/csrf-protection",
+	"type": "module",
+	"version": "1.0.3",
+	"license": "MIT",
+	"packageManager": "npm@10.9.4",
+	"engines": {
+		"node": "22.21.1"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"author": {
+		"email": "dima@dima-v.ru",
+		"name": "Dmitry Vakhnenko"
+	},
+	"repository": {
+		"url": "https://github.com/dimatakoy/csrf-protection"
+	},
+	"files": [
+		"dist/*",
+		"README.md"
+	],
+	"exports": {
+		".": "./dist/main.js"
+	},
+	"scripts": {
+		"format": "prettier . --write",
+		"build": "tsc --project tsconfig.build.json",
+		"type-check": "tsc --noEmit",
+		"test": "vitest"
+	},
+	"devDependencies": {
+		"husky": "^9.1.7",
+		"prettier": "^3.6.2",
+		"vitest": "^4.0.13",
+		"typescript": "^5.9.3",
+		"@tsconfig/strictest": "^2.0.8"
+	}
+}

@@ -1,0 +1,27 @@
+name: Publish Package
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  id-token: write # Required for OIDC
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          # TODO: wait https://github.com/microsoft/azure-pipelines-tasks/issues/21434
+          node-version-file: package.json
+
+      - name: Update npm
+        run: npm install -g npm@latest
+
+      - run: npm ci
+      - run: npm publish
